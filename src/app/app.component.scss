@@ -1,0 +1,26 @@
+@import "../styles/colors";
+
+:host {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 7rem;
+  gap: 5rem;
+  background: url("../assets/images/pattern-hills.svg") bottom no-repeat,
+              url("../assets/images/bg-stars.svg") no-repeat,
+              $very-dark-black-blue;
+  background-size: contain;
+}
+
+header {
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  color: $white;
+}
+
+footer {
+  position: absolute;
+  color: $white;
+  bottom: 2rem;
+}
