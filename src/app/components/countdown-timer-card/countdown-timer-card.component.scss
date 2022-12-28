@@ -20,7 +20,7 @@
   border-radius: 0.5rem;
   perspective: 500px;
   color: $soft-red;
-  box-shadow: 0 0.7rem  0 $very-dark-black-blue;
+  box-shadow: 0 0.7rem 0 $very-dark-black-blue;
 
   &::before {
     content: "";
@@ -93,7 +93,7 @@
         top: 0;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: darken($soft-red, 3)
+        color: darken($soft-red, 3);
       }
     }
 
@@ -138,7 +138,7 @@
         bottom: 0;
         left: 50%;
         backface-visibility: hidden;
-        transform: translate(-50%, 50%);
+        transform: translate(-50%, 50%) rotate(0deg);
         background: linear-gradient($soft-red 50%, transparent 50%);
         background-clip: text;
         color: transparent;
@@ -151,7 +151,11 @@
         scale: -1 -1;
         transform: rotateY(180deg) translate(-50%, -50%);
         backface-visibility: hidden;
-        background: linear-gradient(to top, darken($soft-red, 3) 50%, transparent 50%);
+        background: linear-gradient(
+          to top,
+          darken($soft-red, 3) 50%,
+          transparent 50%
+        );
         background-clip: text;
         color: transparent;
       }
