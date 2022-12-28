@@ -1,11 +1,11 @@
-<div class="card">
-  {{value-1}}
-  <div class="card-half top">
-    <div class="face">{{value}}</div>
-    <div class="back">{{value-1}}</div>
+<div class="card" (click)="value = value - 1">
+  {{value}}
+  <div class="card-half top" [@flip]="previousValue != value" (@flip.done)="previousValue = value">
+    <div class="face">{{previousValue}}</div>
+    <div class="back">{{value}}</div>
   </div>
   <div class="card-half bottom">
-    <div class="face">{{value}}</div>
+    <div class="face">{{previousValue}}</div>
   </div>
 </div>
 <div class="label">

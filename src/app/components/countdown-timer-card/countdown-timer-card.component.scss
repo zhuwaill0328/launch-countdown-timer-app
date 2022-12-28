@@ -48,12 +48,6 @@
     transform: translate(50%, 50%) rotateZ(-45deg);
   }
 
-  &:hover {
-    .top {
-      transform: rotateX(-180deg);
-    }
-  }
-
   .card-half {
     position: absolute;
     left: 0;
