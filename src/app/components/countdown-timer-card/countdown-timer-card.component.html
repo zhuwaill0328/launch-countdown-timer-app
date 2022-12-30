@@ -1,4 +1,4 @@
-<div class="card" (click)="value = value - 1" [@flip]="previousValue != value" (@flip.done)="previousValue = value">
+<div class="card" [@flip]="previousValue != value" (@flip.done)="previousValue = value">
   <div class="card-half top">
     <div class="content">{{value}}</div>
   </div>
