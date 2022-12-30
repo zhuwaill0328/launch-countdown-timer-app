@@ -23,4 +23,15 @@ footer {
   position: absolute;
   color: $white;
   bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+app-svg-icon {
+  fill: $grayish-blue;
+
+  &:hover {
+    fill: $soft-red;
+  }
 }

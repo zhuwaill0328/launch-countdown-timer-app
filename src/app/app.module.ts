@@ -1,20 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
 import { CountdownTimerCardComponent } from './components/countdown-timer-card/countdown-timer-card.component';
+import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountdownTimerComponent,
-    CountdownTimerCardComponent
+    CountdownTimerCardComponent,
+    SvgIconComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
