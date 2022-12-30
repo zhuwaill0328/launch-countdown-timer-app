@@ -7,7 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./countdown-timer-card.component.scss'],
   animations: [
     trigger('flip', [
-      transition("* => 1", animate('300ms linear', style({transform: 'rotateX(-180deg)'})))
+      transition("* => 1", [
+        query('.flip', [
+          animate('300ms linear', style({ transform: 'rotateX(-180deg)' }))
+        ])
+      ])
     ])
   ]
 })

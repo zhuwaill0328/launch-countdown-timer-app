@@ -1,11 +1,15 @@
-<div class="card" (click)="value = value - 1">
-  {{value}}
-  <div class="card-half top" [@flip]="previousValue != value" (@flip.done)="previousValue = value">
-    <div class="face">{{previousValue}}</div>
-    <div class="back">{{value}}</div>
+<div class="card" (click)="value = value - 1" [@flip]="previousValue != value" (@flip.done)="previousValue = value">
+  <div class="card-half top">
+    <div class="content">{{value}}</div>
   </div>
   <div class="card-half bottom">
-    <div class="face">{{previousValue}}</div>
+    <div class="content">{{previousValue}}</div>
+  </div>
+  <div class="card-half top flip">
+    <div class="content">{{previousValue}}</div>
+  </div>
+  <div class="card-half bottom flip">
+    <div class="content">{{value}}</div>
   </div>
 </div>
 <div class="label">
