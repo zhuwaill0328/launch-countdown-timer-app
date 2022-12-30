@@ -23,13 +23,17 @@
   color: $soft-red;
   box-shadow: 0 0.7rem 0 $very-dark-black-blue;
 
+  @media screen and (max-width: 45rem) {
+    font-size: 2rem;
+  }
+
   &::before {
     content: "";
     position: absolute;
-    width: 10px;
+    width: 5%;
     aspect-ratio: 1 / 1;
     background-color: $very-dark-black-blue;
-    border-radius: 0 10px 0 0;
+    border-radius: 0 100% 0 0;
     bottom: 50%;
     left: 0;
     z-index: 2;
@@ -38,10 +42,10 @@
   &::after {
     content: "";
     position: absolute;
-    width: 10px;
+    width: 5%;
     aspect-ratio: 1 / 1;
     background-color: $very-dark-black-blue;
-    border-radius: 10px 0 0 0;
+    border-radius: 100% 0 0 0;
     bottom: 50%;
     right: 0;
     z-index: 2;
@@ -72,10 +76,10 @@
       &::before {
         content: "";
         position: absolute;
-        width: 10px;
+        width: 5%;
         aspect-ratio: 1 / 1;
         background-color: $very-dark-black-blue;
-        border-radius: 0 0 10px 0;
+        border-radius: 0 0 100% 0;
         top: 0;
         left: 0;
         z-index: 2;
@@ -84,10 +88,10 @@
       &::after {
         content: "";
         position: absolute;
-        width: 10px;
+        width: 5%;
         aspect-ratio: 1 / 1;
         background-color: $very-dark-black-blue;
-        border-radius: 0 0 0 10px;
+        border-radius: 0 0 0 100%;
         top: 0;
         right: 0;
         z-index: 2;
@@ -114,10 +118,10 @@
       &::before {
         content: "";
         position: absolute;
-        width: 10px;
+        width: 5%;
         aspect-ratio: 1 / 1;
         background-color: $very-dark-black-blue;
-        border-radius: 0 10px 0 0;
+        border-radius: 0 100% 0 0;
         bottom: 0;
         left: 0;
         z-index: 2;
@@ -126,10 +130,10 @@
       &::after {
         content: "";
         position: absolute;
-        width: 10px;
+        width: 5%;
         aspect-ratio: 1 / 1;
         background-color: $very-dark-black-blue;
-        border-radius: 10px 0 0 0;
+        border-radius: 100% 0 0 0;
         bottom: 0;
         right: 0;
         z-index: 2;
@@ -150,4 +154,8 @@
   color: $grayish-blue;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
+
+  @media screen and (max-width: 45rem) {
+    font-size: 0.3rem;
+  }
 }
