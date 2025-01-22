@@ -24,7 +24,7 @@
 
 <app-countdown-timer></app-countdown-timer>
 
-<form [formGroup]="messageForm" (submit)="submitmessage()">
+<form *ngIf="!showModal" [formGroup]="messageForm" (submit)="submitmessage()">
   <div class="container">
     <input
       formControlName="from"
@@ -35,16 +35,26 @@
         padding: 5px;
         width: 100%;
         margin-bottom: 10px;
+        background-color: #2f2439;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        color: white;
       "
       type="text"
     />
+
     <textarea
+      #textarea
+      formControlName="message"
       style="
         font-weight: normal !important;
         font-family: Arial, Helvetica, sans-serif !important;
       "
-      formControlName="message"
-      placeholder="Write a message to him..."
+      [(ngModel)]="messageForm.value.message"
+      (input)="onInput()"
+      placeholder="Write a comment..."
+      [style.height]="height + 'px'"
     ></textarea>
     <button
       type="submit"
@@ -53,8 +63,101 @@
     >
       Send
     </button>
+    <button type="button" (click)="toggleModal()">View Comment</button>
   </div>
 </form>
+
+<!-- Modal for view comment -->
+<div *ngIf="showModal" class="view-comment-modal">
+  <button style="margin-bottom: 10px" (click)="toggleModal()">
+    Close Comment
+  </button>
+  <div
+    *ngFor="
+      let item of allcomments
+        | paginate
+          : {
+              itemsPerPage: pagesize,
+              currentPage: p,
+              totalItems: allcomments.length
+            }
+    "
+    class="modal-content"
+  >
+    <p
+      style="
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif !important;
+        margin-bottom: 5px;
+        font-weight: bold;
+      "
+    >
+      {{ item?.from ? item.from : "Anonymous" }}
+    </p>
+    <p
+      style="
+        font-size: 12px;
+        font-weight: normal !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+      "
+    >
+      {{ item.message }}
+    </p>
+  </div>
+
+  <pagination-controls
+    style="
+      font-family: Arial, Helvetica, sans-serif !important;
+      margin-bottom: 5px;
+      font-weight: normal;
+      color: white;
+    "
+    (pageChange)="p = $event"
+  ></pagination-controls>
+
+  <form [formGroup]="messageForm" (submit)="submitmessage()">
+    <div class="container">
+      <input
+        formControlName="from"
+        placeholder="Type your name here.(Optional)"
+        style="
+          font-weight: normal !important;
+          font-family: Arial, Helvetica, sans-serif !important;
+          padding: 5px;
+          width: 100%;
+          margin-bottom: 10px;
+          background-color: #2f2439;
+          padding: 10px;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          color: white;
+        "
+        type="text"
+      />
+
+      <textarea
+        #textarea
+        formControlName="message"
+        style="
+          font-weight: normal !important;
+          font-family: Arial, Helvetica, sans-serif !important;
+        "
+        [(ngModel)]="messageForm.value.message"
+        (input)="onInput()"
+        placeholder="Write a comment..."
+        [style.height]="height + 'px'"
+      ></textarea>
+      <button
+        type="submit"
+        [disabled]="!allowedsubmit"
+        style="padding-left: 10px; padding-right: 10px"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+
 <footer>
   <h5>You can still find me at</h5>
   <a target="_blank" href="https://www.facebook.com/marco.a.montenegro.5">

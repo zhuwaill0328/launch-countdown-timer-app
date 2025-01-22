@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 export const FIREBASE_REF = {
   DEFAULT_INSTANCE_DB_AUTH: '[DEFAULT]',
@@ -35,6 +37,8 @@ export const FIREBASE_REF = {
     AngularFirestoreModule,
     ReactiveFormsModule,
     FormsModule,
+    CommonModule,
+    NgxPaginationModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
   ],
