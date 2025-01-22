@@ -1,12 +1,11 @@
 @import "../styles/colors";
 
 :host {
-  min-height: 100vh;
   display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 7rem 0rem 2rem;
+  padding: 3rem 0.5rem 0.5rem;
   background: url("../assets/images/pattern-hills.svg") bottom no-repeat,
     url("../assets/images/bg-stars.svg") no-repeat, $very-dark-blue;
   background-size: contain;
@@ -18,19 +17,17 @@
 
 }
 
-.main {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  flex-direction: column;
-  gap: 5rem;
-}
+
 
 header {
   font-size: 1.5rem;
   letter-spacing: 0.5rem;
-  color: $white;
+  color: $soft-red;
   text-align: center;
+
+  @media screen and (min-width: 15rem) {
+    font-size: 1rem;
+  }
 }
 
 footer {
@@ -38,6 +35,11 @@ footer {
   display: flex;
   align-items: center;
   gap: 2rem;
+
+  @media screen and (min-width: 15rem) {
+
+    margin-top: 2%;
+  }
 }
 
 app-svg-icon {
@@ -47,4 +49,33 @@ app-svg-icon {
     cursor: pointer;
     fill: $soft-red;
   }
+}
+
+.container {
+  position: relative;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  padding: 5px;
+
+  width: 100%;
+  margin-top: 20px;
+  padding: 5px;
+
+}
+
+textarea {
+  background-color: transparent;
+  width: 100%;
+  resize: vertical;
+  border: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }

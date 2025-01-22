@@ -1,9 +1,69 @@
-<div class="main">
-  <header>WE'RE LAUNCHING SOON</header>
-  <app-countdown-timer></app-countdown-timer>
-</div>
+<header
+  style="
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    opacity: 0.5;
+    color: black;
+    border-radius: 10px;
+  "
+>
+  FOR RESIGNATION <br />
+  MARCO ANGELO V. MONTENEGRO
+</header>
+
+<img
+  style="position: relative; padding: 0; margin-bottom: 2px"
+  src="../assets/images/2.png"
+  alt=""
+/>
+
+<!-- <button (click)="toggle()">celebrate</button> -->
+
+<app-countdown-timer></app-countdown-timer>
+
+<form [formGroup]="messageForm" (submit)="submitmessage()">
+  <div class="container">
+    <input
+      formControlName="from"
+      placeholder="Type your name here.(Optional)"
+      style="
+        font-weight: normal !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        padding: 5px;
+        width: 100%;
+        margin-bottom: 10px;
+      "
+      type="text"
+    />
+    <textarea
+      style="
+        font-weight: normal !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+      "
+      formControlName="message"
+      placeholder="Write a message to him..."
+    ></textarea>
+    <button
+      type="submit"
+      [disabled]="!allowedsubmit"
+      style="padding-left: 10px; padding-right: 10px"
+    >
+      Send
+    </button>
+  </div>
+</form>
 <footer>
-  <app-svg-icon src="../assets/images/icon-facebook.svg"></app-svg-icon>
-  <app-svg-icon src="../assets/images/icon-pinterest.svg"></app-svg-icon>
-  <app-svg-icon src="../assets/images/icon-instagram.svg"></app-svg-icon>
+  <h5>You can still find me at</h5>
+  <a target="_blank" href="https://www.facebook.com/marco.a.montenegro.5">
+    <app-svg-icon src="../assets/images/icon-facebook.svg"></app-svg-icon
+  ></a>
+  <a
+    target="_blank"
+    href="https://www.instagram.com/marcoangelomontenegro?igsh=NjA2MnM3NGE2N2kw"
+  >
+    <app-svg-icon src="../assets/images/icon-instagram.svg"></app-svg-icon
+  ></a>
 </footer>
